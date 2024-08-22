@@ -8,15 +8,17 @@ The Spring Boot application uses Postgres as the datatabase for persisting the i
 
 ![Spring Boot application with React front end](springboot-react.png)
 
-Home page:
+## Screenshots
+
+- Home page:
 
 <img src= "home-screenshot.png" alt="Home page" style="border: 1px solid black;">
 
-List items:
+- List items:
 
 <img src= "list-screenshot.png" alt="List items" style="border: 1px solid black;">
 
-Add item:
+- Add item:
 
 <img src= "add-screenshot.png" alt="Add item" style="border: 1px solid black;">
 
