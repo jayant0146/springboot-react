@@ -26,7 +26,7 @@ The Spring Boot application uses Postgres as the datatabase for persisting the i
 
 The steps to run the demo are described here.  See the sections below for more detail on the React and Spring Boot applications.
 
-In the project root run:
+With Docker running, in the project root run:
 ```
 mvn clean install
 docker-compose up -d
