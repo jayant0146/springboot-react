@@ -6,21 +6,21 @@ Spring Boot application with a React front end that allows the user to list, add
 
 The Spring Boot application uses Postgres as the datatabase for persisting the items.  The React application provides a UI to perform the create, read, update and delete (CRUD) operations.
 
-![Spring Boot application with React front end](springboot-react.png)
+![Spring Boot application with React front end](resources/springboot-react.png)
 
 ## Screenshots
 
 - Home page:
 
-<img src= "home-screenshot.png" alt="Home page" style="border: 1px solid black;">
+<img src= "resources/home-screenshot.png" alt="Home page" style="border: 1px solid black;">
 
 - List items:
 
-<img src= "list-screenshot.png" alt="List items" style="border: 1px solid black;">
+<img src= "resources/list-screenshot.png" alt="List items" style="border: 1px solid black;">
 
 - Add item:
 
-<img src= "add-screenshot.png" alt="Add item" style="border: 1px solid black;">
+<img src= "resources/add-screenshot.png" alt="Add item" style="border: 1px solid black;">
 
 ## Run Demo
 
@@ -36,6 +36,7 @@ java -jar target/springboot-react-1.0.0.jar
 In a second terminal window:
 ```
 cd frontend
+npm install --save bootstrap@5.1 react-cookie@4.1.1 react-router-dom@5.3.0 reactstrap@8.10.0
 npm start
 ```
 
@@ -152,7 +153,7 @@ docker-compose down
 
 The component test tests the Spring Boot application reading and writing records via the REST API.
 
-![Component testing the Spring Boot application](springboot-postgres-component-test.png)
+![Component testing the Spring Boot application](resources/springboot-postgres-component-test.png)
 
 For more on the component tests see: https://github.com/lydtechconsulting/component-test-framework
 
