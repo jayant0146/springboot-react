@@ -50,15 +50,15 @@ The React skeleton application is created in the root of the Spring Boot applica
 
 ```
 npx create-react-app frontend
+cd frontend
 npm install --save bootstrap@5.1 react-cookie@4.1.1 react-router-dom@5.3.0 reactstrap@8.10.0
 ```
 
 It uses Bootstrap's CSS and reactstrap's components for the UI, with React Router components for navigating around the application.
 
-To start the React application:
+To start the React application, in the `\frontend` directory:
 
 ```
-cd frontend
 npm start
 ```
 
