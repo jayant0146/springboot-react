@@ -8,8 +8,31 @@ services:
             - POSTGRES_PASSWORD=postgres
         ports:
             - '5432:5432'
-#        volumes:
-#            - postgres:/var/lib/postgresql/data
-#
-#volumes:
-#    postgres: {}
+        volumes:
+            - postgres:/var/lib/postgresql/data
+
+    frontend:
+        container_name: react-frontend
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - '3002:3000'
+        depends_on:
+            - postgres
+            - backend
+    
+    backend:
+        container_name: spring-backend
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - '8080:8080'
+        depends_on:
+            - postgres
+
+volumes:
+   postgres:

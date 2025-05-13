@@ -1,0 +1,35 @@
+name: Automating Image Building
+on: 
+    workflow_dispatch:
+        inputs:
+            build:
+                description: 'Build the images'
+                required: true
+                type: choice
+                options:
+                - Build the services
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build the backend spring image
+        run: |
+          docker buildx build \
+            -t spring-backend \
+            -f Dockerfile .
+
+      - name: Build the frontend react image
+        run: |
+          docker buildx build \
+            -t react-frontend \
+            -f frontend/Dockerfile ./frontend
+
+      - name: Docker compose up after build
+        run: |
+          docker-compose up -d
