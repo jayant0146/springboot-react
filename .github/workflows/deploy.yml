@@ -32,4 +32,4 @@ jobs:
 
       - name: Docker compose up after build
         run: |
-          docker-compose up -d
+          docker compose up -d
