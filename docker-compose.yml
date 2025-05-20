@@ -1,3 +1,5 @@
+version: "3.7"
+
 services:
     postgres:
         container_name: postgres
@@ -17,6 +19,8 @@ services:
             context: ./frontend
             dockerfile: Dockerfile
         restart: always
+        environment:
+            - REACT_APP_API_URL=http://backend:9001
         ports:
             - '3003:3000'
         depends_on:
@@ -30,9 +34,13 @@ services:
             dockerfile: Dockerfile
         restart: always
         ports:
-            - '8080:8080'
+            - '9001:9001'
         depends_on:
             - postgres
+        environment:
+            # - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres?currentSchema=demo
+            - SPRING_DATASOURCE_USERNAME=postgres
+            - SPRING_DATASOURCE_PASSWORD=postgres
 
 volumes:
    postgres:
